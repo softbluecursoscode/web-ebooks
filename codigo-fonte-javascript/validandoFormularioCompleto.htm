@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript é na Softblue!</title>
+  </head>
+  <body>
+    <script>
+    
+      function validarFormulario()
+      {
+        // Captura o campo de texto que representa o nome do usuário
+        conteudo_nome = document.forms["meu_form"].campo_nome.value;
+                
+        // Validação se o nome foi preenchido
+        if(conteudo_nome == "")
+        {
+          alert("É necessário preencher o campo nome corretamente.");
+          return;
+        }
+        
+        // Captura o valor do campo que representa o sexo do usuário
+        total_opcoes  = document.forms["meu_form"].campo_sexo.length;
+        
+        // Validação se o sexo foi selecionado
+        opcao_escolhida = null;
+        
+        for(i=0; i<total_opcoes; i++)
+        {
+          if(document.forms["meu_form"].campo_sexo[i].checked == true)
+          {
+            opcao_escolhida = document.forms["meu_form"].campo_sexo[i].value;
+          }
+        }
+        
+        if(opcao_escolhida == null)
+        {
+          alert("É necessário selecionar o campo sexo corretamente.");
+          return;
+        }
+        
+        // Captura se foi marcado a caixa de maior que 18 anos
+        // Mas neste exemplo nenhuma validação se faz necessária.
+        marcacao_maior = document.forms["meu_form"].campo_maior.checked;
+        
+        // Captura o número e o valor da opção selecionada em COMO CONHECEU O SITE
+        conteudo_como = document.forms["meu_form"].campo_como.value;
+        numero_como   = document.forms["meu_form"].campo_como.selectedIndex;
+        
+        // Validação se o campo COMO CONHECEU O SITE foi selecionado
+        // diferente da opção "Selecione..."
+        if(numero_como == 0)
+        {
+          alert("É necessário selecionar como conheceu o site.");
+          return;
+        }
+        
+        // Se não tiver realizado um return até este momento
+        // envia os dados para o servidor
+        document.forms["meu_form"].submit();
+      }
+
+    </script>
+    
+    <form name="meu_form" method="get" action="?">
+    
+      Nome completo: 
+      <input name="campo_nome" type="text">
+      <br>
+      
+      Sexo: 
+      <input name="campo_sexo" type="radio" value="M">Masculino
+      <input name="campo_sexo" type="radio" value="F">Feminino
+      <br>
+      
+      <input name="campo_maior" type="checkbox" value="maior">
+      Declaro ser maior de 18 anos
+      <br>
+            
+      Como conheceu o site:
+      <select name="campo_como">
+        <option value="Nenhum" default>Selecione...</option>
+        <option value="Ind">Indicação de amigo</option>
+        <option value="Out">Outro site</option>
+        <option value="Goo">Google</option>
+      </select>
+      <br>
+      
+      <input type="reset"  value="Limpar dados">
+      <input type="button" value="Enviar" onClick="validarFormulario();">
+    
+    </form>
+  </body>
+</html>

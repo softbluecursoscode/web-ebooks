@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Softblue: E-book de AJAX</title>
+    <script>
+      function ajaxStart()
+      {
+        var imagem = document.getElementById("imagemStatus");
+        imagem.src = "imageLoading.gif";
+        
+        var url = "conteudoListaXml.xml";
+        
+        if(window.XMLHttpRequest) // Maioria dos navegadores
+        {
+          req = new XMLHttpRequest();
+          req.onreadystatechange = ajaxProcessarRecebimento;
+          req.open("GET", url);
+          req.send(null);
+        } 
+        else if(window.ActiveXObject) // Navegadores ActiveX
+        {
+          req = new ActiveXObject("Microsoft.XMLHTTP");
+          req.onreadystatechange = ajaxProcessarRecebimento;
+          req.open("GET", url);
+          req.send();
+        }
+      }
+      
+      function ajaxProcessarRecebimento()
+      {
+        if(req.readyState == 4)
+        {
+          if(req.status == 200) 
+          {
+            var xmlDoc = req.responseXML;
+            
+            var buffer = "";
+            buffer += "<table>";
+            buffer += "  <tr>";
+            buffer += "    <th>Curso</th>";
+            buffer += "    <th>Instrutor</th>";
+            buffer += "    <th>Tipo</th>";
+            buffer += "  </tr>";
+            
+            var eSoftblue = xmlDoc.getElementsByTagName("SOFTBLUE")[0];
+            
+            var courses = eSoftblue.getElementsByTagName("COURSE");
+            for(i=0; i < courses.length; i++) 
+            { 
+              buffer += "<tr>";
+              
+              buffer += "  <td>" + courses[i]
+                             .getElementsByTagName("TITLE")[0]
+                             .firstChild
+                             .nodeValue + "</td>";
+              
+              buffer += "  <td>" + courses[i]
+                             .getElementsByTagName("INSTRUCTOR")[0]
+                             .firstChild
+                             .nodeValue + "</td>";
+                             
+              buffer += "  <td>" + courses[i]
+                             .getElementsByTagName("TYPE")[0]
+                             .firstChild
+                             .nodeValue + "</td>";
+                             
+              buffer += "</tr>";
+            }
+            
+            buffer += "</table>";
+            
+            document.getElementById("meuDiv").innerHTML = buffer;
+            
+            var imagem = document.getElementById("imagemStatus");
+            imagem.src = "imageEmpty.gif";
+          }
+          else
+          {
+            alert(req.status + ": Possível erro é a falta do protocolo HTTP.");
+          }
+        }
+      }
+  </script>
+  </head>
+  <body>
+    <h1>Exemplo de captura de lista XML via AJAX</h1>
+      
+    <input type=button onClick="ajaxStart();"
+           value="Obter informação de lista XML via AJAX"><br>
+  
+    <img src='imageEmpty.gif' id="imagemStatus"><br>
+    
+    <div id="meuDiv"></div>
+  </body>
+</html>
+
+
+
+

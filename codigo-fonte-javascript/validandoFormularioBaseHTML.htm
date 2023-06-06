@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript é na Softblue!</title>
+  </head>
+  <body>
+    <script>
+      function validarFormulario()
+      {
+        /* Código de validação */
+      }
+    </script>
+    
+    <form name="meu_form" method="get" action="?">
+    
+      Nome completo: 
+      <input name="campo_nome" type="text">
+      <br>
+      
+      Sexo: 
+      <input name="campo_sexo" type="radio" value="M">Masculino
+      <input name="campo_sexo" type="radio" value="F">Feminino
+      <br>
+      
+      <input name="campo_maior" type="checkbox" value="maior">
+      Declaro ser maior de 18 anos
+      <br>
+            
+      Como conheceu o site:
+      <select name="campo_como">
+        <option value="Nenhum" default>Selecione...</option>
+        <option value="Ind">Indicação de amigo</option>
+        <option value="Out">Outro site</option>
+        <option value="Goo">Google</option>
+      </select>
+      <br>
+      
+      <input type="reset"  value="Limpar dados">
+      <input type="button" value="Enviar" onClick="validarFormulario();">
+    
+    </form>
+  </body>
+</html>

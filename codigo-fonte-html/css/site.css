@@ -1,0 +1,126 @@
+body
+{
+  background-color: #26c4f3;
+  font-family: Century Gothic;
+}
+
+@font-face 
+{
+	font-family: Century Gothic;
+	src: url('/fonts/GOTHIC.ttf');
+}
+      
+@font-face 
+{
+	font-family: Century Gothic;
+	src: url('/fonts/GOTHICB.ttf');
+	font-weight: bold;
+}
+
+div#raiz
+{
+  width: 610px;
+  margin: 0 auto;
+}
+
+div#cabecalho
+{ 
+  float: left; 
+  width: 600px; 
+  margin: 5px; 
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+.imagemMesmaLinhaLogotipo
+{
+  float: left;
+  margin: 10px;
+  margin-right: 30px;
+}
+
+.imagemMesmaLinhaMenu
+{
+  float: left;
+  margin: 10px;
+  margin-top: 50px;
+}
+
+div#conteudo
+{ 
+  float: left; 
+  width: 405px; 
+  height: 350px;
+  margin: 5px; 
+  background-color: #ffffff;
+  border-radius: 15px 50px 15px 50px;
+}
+
+h1
+{
+  color: #26c4f3;
+  margin-left: 20px;
+  font-size: 18pt;
+}
+
+p
+{
+  margin-left: 20px;
+}
+
+figure
+{
+  text-align: center;
+}
+
+figcaption
+{
+  font-size: 10pt;
+}
+
+div#lateral
+{
+  float: left; 
+  width: 185px;
+  margin: 5px;  
+  height: 350px;
+  background-color: #ffffff;
+  border-radius: 15px 50px 15px 50px;
+}
+
+p#lateral
+{
+  margin-left: 10px;
+}
+
+a:link 
+{
+	color: #26C4F3;
+	text-decoration: none;
+}
+
+a:visited 
+{
+	color: #26C4F3;
+	text-decoration: none;
+}
+
+a:hover 
+{
+	text-decoration: underline;
+}
+
+div#rodape
+{ 
+  float: left; 
+  width: 600px; 
+  margin: 5px; 
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 15px;
+}
+
+
+
+
+

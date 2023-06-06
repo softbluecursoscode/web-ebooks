@@ -1,0 +1,68 @@
+.meuEstilo
+{
+  margin-left: 100px; 
+  margin-top: 50px;"
+}
+
+.alinhadoDireita
+{
+  text-align: right;
+}
+
+.alinhadoEsquerda
+{
+  text-align: left;
+}
+
+.alinhadoCentralizado
+{
+  text-align: center;
+}
+
+.alinhadoJustificado
+{
+  text-align: justify;
+}
+
+.textoEstilo1
+{
+  color: #FF0000;
+  font-size: 16;
+  font-family: Arial;
+}
+
+.formatoNegrito
+{
+  font-weight: bold;
+}
+
+.formatoItalico
+{
+  font-style: italic;
+}
+
+.formatoSublinhado
+{
+  text-decoration: underline;
+}
+
+.formatoRiscado
+{
+  text-decoration: line-through;
+}
+
+.formatoNeutro
+{
+  font-weight: normal;
+}
+
+.meuDiv1
+{
+  background-color: #26c4f3;
+  color: #ffffff;
+  width: 300px;
+  height: 100px;
+}
+
+
+

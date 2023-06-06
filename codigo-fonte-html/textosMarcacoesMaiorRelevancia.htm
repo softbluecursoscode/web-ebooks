@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Capítulo HTML</title>
+    <link rel="stylesheet" type="text/css" href="arquivoDeEstilos.css">
+  </head>
+  <body>
+    <p>
+      Esta página apresenta trechos de códigos do <strong>algoritmo
+      de busca binária</strong>.
+    </p>
+    <p>
+      O nome da busca vem do inglês <em>binary search algorithm</em>.
+    </p>
+    <code>
+      <pre>
+        public static int buscaBinaria(int[] array, int valor){
+            int inicio = 0;
+            int fim = array.length-1;
+            
+            while(inicio <= fim){
+                int meio = (inicio+fim)/2;
+                
+                if(array[meio] == valor){
+                    return meio;
+                }
+                if(valor > array[meio]){
+                    inicio = meio+1;
+                } else {
+                    fim = meio-1;
+                }
+            }
+            return -1;
+        }
+      </pre>
+    </code>
+    <p>
+      O algoritmo inicia criando as variáveis <var>inicio</var>
+      e <var>fim</var>. O programa iniciará quando o usuário
+      pressionar a tecla <kbd>ENTER</kbd>, e apresentará o
+      resultado no final, que pode ser <samp>5 BUSCAS</samp>.
+    </p>
+  </body>
+</html>
+

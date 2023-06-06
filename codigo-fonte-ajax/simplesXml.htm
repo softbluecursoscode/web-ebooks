@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Softblue: E-book de AJAX</title>
+    <script>
+      function ajaxStart()
+      {
+        var imagem = document.getElementById("imagemStatus");
+        imagem.src = "imageLoading.gif";
+        
+        var url = "conteudoSimplesXml.xml";
+        
+        if(window.XMLHttpRequest) // Maioria dos navegadores
+        {
+          req = new XMLHttpRequest();
+          req.onreadystatechange = ajaxProcessarRecebimento;
+          req.open("GET", url);
+          req.send(null);
+        } 
+        else if(window.ActiveXObject) // Navegadores ActiveX
+        {
+          req = new ActiveXObject("Microsoft.XMLHTTP");
+          req.onreadystatechange = ajaxProcessarRecebimento;
+          req.open("GET", url);
+          req.send();
+        }
+      }
+    
+      function ajaxProcessarRecebimento()
+      {
+        if(req.readyState == 4)
+        {
+          if(req.status == 200) 
+          {
+            var xmlDoc = req.responseXML;
+            
+            var eSoftblue = xmlDoc.getElementsByTagName("SOFTBLUE")[0];
+            var eTitle = eSoftblue.getElementsByTagName("TITLE")[0];
+            var conteudoTitle = eTitle.firstChild.nodeValue;
+            var buffer = "Título do livro: " + conteudoTitle + " ";
+            
+            var eAtributo = eTitle.getAttribute('codigoLivro');
+            buffer += "Código do livro: " + eAtributo + " ";
+            
+            var eCountry = eSoftblue.getElementsByTagName("COUNTRY")[0];
+            var conteudoCountry = eCountry.firstChild.nodeValue;
+            buffer += "País: " + conteudoCountry + " ";
+            
+            var eCompany = eSoftblue.getElementsByTagName("COMPANY")[0];
+            var conteudoCompany = eCompany.firstChild.nodeValue;
+            buffer += "Empresa: " + conteudoCompany + " ";
+            
+            alert(buffer);
+            
+            var imagem = document.getElementById("imagemStatus");
+            imagem.src = "imageEmpty.gif";
+          }
+          else
+          {
+            alert(req.status + ": Possível erro é a falta do protocolo HTTP.");
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Exemplo de captura de XML via AJAX</h1>
+    
+    <input type=button onClick="ajaxStart();"
+           value="Obter informação de XML via AJAX"><br>
+ 
+    <img src='imageEmpty.gif' id="imagemStatus">
+  </body>
+</html>
+
+
+
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript é na Softblue!</title>
+  </head>
+  <body>
+    <script>
+      
+      var texto = "JavaScript é na Softblue!";
+      document.write("O texto tem " + texto.length + " posições.<br>");
+      
+      var posicao = texto.indexOf("Softblue");
+      document.write("Resultado da busca 'Softblue': " + posicao + "<br>");
+      
+      posicao = texto.indexOf("Servidor");
+      document.write("Resultado da busca 'Servidor': " + posicao + "<br>");
+      
+      var trecho = texto.substring(4, 10); 
+      document.write("Trecho entre posições 4 e 10: " + trecho);
+      
+    </script>
+  </body>
+</html>

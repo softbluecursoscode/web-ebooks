@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Capítulo HTML</title>
+    <link rel="stylesheet" type="text/css" href="arquivoDeEstilos.css">
+  </head>
+  <body>
+    <form method="post" action="">
+      Nome: <input type="text" name="campoNome" value="André" disabled><br>
+      Idade: <input type="number" name="campoIdade" min="1" max="95"/><br>
+      Sexo:
+      <input type="radio" name="campoSexo" value="M" checked> Masculino
+      <input type="radio" name="campoSexo" value="F"> Feminino<br>
+      Deseja receber e-mails:
+      <input type="checkbox" name="campoReceber" checked><br>
+      Estado civil:
+      <select name="campoCivil">
+        <option value="solteiro">Solteiro(a)</option>
+        <option value="casado" selected>Casado(a)</option>
+        <option value="divorciado">Divorciado(a)</option>
+        <option value="viuvo">Viúvo(a)</option>
+      </select><br>
+      <input type="reset" value="Limpar dados">
+      <input type="submit" value="Enviar formulário">
+    </form>
+  </body>
+</html>
+

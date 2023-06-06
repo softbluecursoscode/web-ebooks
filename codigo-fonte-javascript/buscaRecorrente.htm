@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript é na Softblue!</title>
+  </head>
+  <body>
+    <script>
+      
+      var texto = "JavaScript é na Softblue!";
+
+      var posicao = texto.indexOf("a");
+      
+      while(posicao != -1)
+      {
+        document.write("Posição: " + posicao + "<br>");
+        posicao = texto.indexOf("a", posicao+1);
+      }
+      
+    </script>
+  </body>
+</html>

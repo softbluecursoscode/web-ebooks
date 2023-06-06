@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript é na Softblue!</title>
+  </head>
+  <body>
+    <script>
+    
+    function cumprimentar(horario, nome)
+    { 
+      var frase;
+      
+      if(horario < 12)
+      {
+        frase = "Bom dia ";
+      }
+      else if(horario < 18)
+      {
+        frase = "Boa tarde ";
+      }
+      else
+      {
+        frase = "Boa noite ";
+      }
+      
+      frase = frase + nome;
+      document.write(frase);
+    }
+    
+    cumprimentar(10, "André");
+         
+    </script>
+  </body>
+</html>
+
